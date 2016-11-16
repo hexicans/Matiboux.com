@@ -1,4 +1,4 @@
-## *Matiboux.com*  <small>- Backup Public Repository</small>
+## *Matiboux.com* - Backup Public Repository
 
 **Welcome.**  
 **My name is Mathieu "Matiboux" Guérin.**  
@@ -30,7 +30,7 @@ All my personnal web projects are on this backup repository I think.
 *Oh, and hey. Please note that all my projects are on standby, don't forget.*
 
 **Most of my main projects are licensed.**  
-But my smaller ones are not licensed: *please consider each of them as open source projects **licensed under the MIT License***. This license allow you to do whatever you want, as long you mention my name and copyright.
+But all my other projects are not licensed: _please consider each of them as open source projects **licensed under the MIT License**_. This license allow you to do whatever you want, as long you mention my name and copyright.
 
 My main projects:
 
@@ -40,17 +40,17 @@ My main projects:
 
 - [**ImgShot**](https://github.com/matiboux/ImgShot) (latest release: v1.0)  
 **Licensed under GNU GPL v3**  
-<small>The *imgshot/\** copie is an abandoned version branch.</small>
+<small>The _imgshot/*_ copie is an abandoned version branch.</small>
 
 - [**Keygen**](https://github.com/matiboux/KeyGen) (latest release: v1.0)  
 **Licensed under GNU GPL v3**  
-<small>The *keygen/\** copie is an abandoned version branch.</small>
-<small>The *projects/\** copie is a development version (future v2.0 - about [Oli multiple website management](https://github.com/OliFramework/Oli)).</small>
+<small>The _keygen/*_ copie is an abandoned version branch.</small>  
+<small>The _projects/*_ copie is a development version (future v2.0 - about [Oli multiple website management](https://github.com/OliFramework/Oli)).</small>
 
 - [**Url Shortener**](https://github.com/matiboux/KeyGen) (latest release: v1.0)  
 **Licensed under GNU GPL v3**  
-<small>The *u/\** copie is an abandoned version branch.</small>  
-<small>The *projects/\** copie is the current development branch (v1.1.1-dev - about [Oli multiple website management](https://github.com/OliFramework/Oli)).</small>
+<small>The _u/*_ copie is an abandoned version branch.</small>  
+<small>The _projects/*_ copie is the current development branch (v1.1.1-dev - about [Oli multiple website management](https://github.com/OliFramework/Oli)).</small>
 
 - **Matiboux Social** - A hand-made privacy-friendly social network.
 
