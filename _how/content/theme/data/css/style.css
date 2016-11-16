@@ -1,0 +1,99 @@
+/*\
+|*|
+|*|  Matiboux How? Stylesheet
+|*|  Copyright Matiboux 2016
+|*|
+|*|  Developper: Matiboux (http://matiboux.com/)
+|*|  Website: http://how.matiboux.com/
+|*|
+\*/
+
+/** Import fonts */
+@import url("http://fonts.googleapis.com/css?family=Roboto:300,400,700,900");
+
+/** Global CSS */
+body {
+	font-family: 'Roboto', sans-serif;
+	background: #fff;
+	margin: 0;
+	overflow-x: hidden;
+}
+* {
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+
+/** Main */
+.main {
+	padding: 20px 0;
+	color: #fff;
+	text-align: center;
+	overflow-x: auto;
+}
+@media (min-width: 768px) {
+	.main {
+		padding: 40px 0;
+	}
+}
+
+.main .h1,
+.main h1 {
+	font-size: 48px;
+}
+.main .h1:first-child,
+.main h1:first-child {
+	margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+	.main .h1,
+	.main h1 {
+		font-size: 64px;
+	}
+}
+
+.main p {
+	font-size: 20px;
+}
+@media (min-width: 768px) {
+	.main p {
+		font-size: 28px;
+	}
+}
+
+/** Footer */
+.footer {
+    position: absolute;
+    padding: 20px 50px;
+    bottom: 0;
+    right: 0;
+	color: #fff;
+}
+
+.footer > li {
+	display: table;
+	margin-bottom: 4px;
+	font-size: 14px;
+	list-style: none;
+}
+@media (min-width: 768px) {
+	.footer > li {
+		display: inline-block;
+		margin-left: 11px;
+		padding-left: 11px;
+		border-left: 1px solid #fff;
+	}
+}
+.footer > li:first-child {
+	margin-left: 0;
+	padding-left: 0;
+	border-left: 0;
+}
+.footer > li > a {
+	color: #fff;
+	text-decoration: none;
+}
+.footer > li > a:hover,
+.footer > li > a:focus {
+	text-decoration: underline;
+	border-bottom: transparent;
+}

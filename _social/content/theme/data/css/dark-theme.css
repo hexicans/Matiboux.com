@@ -1,0 +1,78 @@
+/*\
+|*|
+|*|  Matiboux Social Stylesheet
+|*|  Copyright Matiboux 2015
+|*|  http://social.matiboux.com/
+|*|
+|*|  Dark Theme
+|*|
+\*/
+
+/** Global CSS */
+body { background: #353b44; }
+
+/** Big Media */
+.bigMedia { background: rgba(0, 0, 0, .72); }
+
+/** Main */
+.main { color: #fff; }
+
+.main .content-card,
+.main .message { background: #202630; }
+/*.main .content-card.highlight {
+	border: 2px solid rgba(51, 122, 183, 0.48);
+}
+.main .content-card.highlight-danger {
+	border: 2px solid rgba(169, 68, 66, 0.48);
+}*/
+
+.main .message.message-primary { background: #337ab7; color: #fff; }
+.main .message.message-success { background: #5cb85c; color: #fff; }
+.main .message.message-info { background: #5bc0de; color: #fff; }
+.main .message.message-warning { background: #f0ad4e; color: #fff; }
+.main .message.message-danger { background: #d9534f; color: #fff; }
+
+.main .tools a.btn.btn-link,
+.main .profile a.btn.btn-link,
+.main .meta a.btn.btn-link { color: #fff; }
+.main .tools a.btn.btn-link.active,
+.main .profile a.btn.btn-link.active,
+.main .meta a.btn.btn-link.active { color: #337ab7; }
+
+.main .post > .pull-right a.btn-link,
+.main .post > .meta a.btn-link,
+.main .user > .pull-right a.btn-link,
+.main .user > .meta a.btn-link,
+.main .notification > .pull-right a.btn-link,
+.main .notification > .meta a.btn-link { color: #fff; }
+.main .post > .pull-right a.btn-link.active,
+.main .post > .meta a.btn-link.active,
+.main .user > .pull-right a.btn-link.active,
+.main .user > .meta a.btn-link.active,
+.main .notification > .pull-right a.btn-link.active,
+.main .notification > .meta a.btn-link.active { color: #337ab7; }
+.main .post > .pull-right a.btn-link:hover,
+.main .post > .pull-right a.btn-link:focus,
+.main .post > .meta a.btn-link:hover,
+.main .post > .meta a.btn-link:focus,
+.main .user > .pull-right a.btn-link:hover,
+.main .user > .pull-right a.btn-link:focus,
+.main .user > .meta a.btn-link:hover,
+.main .user > .meta a.btn-link:focus,
+.main .notification > .pull-right a.btn-link:hover,
+.main .notification > .pull-right a.btn-link:focus,
+.main .notification > .meta a.btn-link:hover,
+.main .notification > .meta a.btn-link:focus { border-color: rgba(0, 0, 0, .24); }
+
+.main .new-post .media,
+.main .post .media {
+	background: #fff;
+    border-color: #222;
+}
+
+.main .edit-avatar input[type="file"]::before {
+	background: -webkit-linear-gradient(top, #050505, #1c1c1c);
+	border-color: #999;
+	text-shadow: 1px 1px #000;
+}
+.main .edit-avatar input[type="file"]:active::before { background: -webkit-linear-gradient(top, #1c1c1c, #050505); }

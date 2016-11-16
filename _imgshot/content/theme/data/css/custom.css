@@ -1,0 +1,27 @@
+/*\
+|*|
+|*|  ImgShot Stylesheet
+|*|  Copyright Matiboux 2015
+|*|
+|*|  Developper: Matiboux (http://matiboux.com/)
+|*|  Website: http://imgshot.matiboux.com/
+|*|
+\*/
+
+/** Sensitive Content */
+.sensitive-content + .preview {
+	display: none;
+}
+
+/** Preview */
+.preview {
+	margin: 10px 0;
+}
+.preview img {
+	max-width: 100%;
+}
+
+/** Preview */
+.share {
+	margin: 10px 0;
+}

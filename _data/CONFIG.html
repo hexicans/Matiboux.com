@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONFIG</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="oli-tutorials-get-started">Oli Tutorials: Get started</h1>
+
+<p>Once you have downloaded Oli and extrated it on your web server, you have to configure it. <br>
+Here, I will help you to understand what’s in the <strong>config.json</strong> file and show you how to create a basic web page.</p>
+
+
+
+<h3 id="htaccess-configuration">.htaccess configuration</h3>
+
+<p>You must verify that <code>ErrorDocument</code> is correctly set up. <br>
+If your Oli website is hosted on <code>http://yourdomain.com/</code> or any sub domain, set it as <code>ErrorDocument 404 /index.php</code>. <br>
+Else if your Oli website is hosted on <code>http://yourdomain.com/something/</code> or any sub domain, set it as <code>ErrorDocument 404 /something/index.php</code>.</p>
+
+
+
+<h3 id="oli-configuration">Oli configuration</h3>
+
+<p>The Oli parameter contains all configuration of Oli. Change the values to whatever you want to use. Here’s is the detailed list of all these parameters:</p>
+
+<ul>
+<li><strong><code>mysql</code></strong> contains login information to the database <br>
+<ul><li><code>database</code> name, <code>username</code>, <code>password</code> and <code>hostname</code></li></ul></li>
+<li><strong><code>settings_tables</code></strong> contains your settings tables <br>
+<ul><li>Can be one table (e.g. <code>"settings"</code>)</li>
+<li>Can be multiple tables (in priority order, e.g. <code>["higher_priority", "lower_priority"]</code>)</li>
+<li>These table contains website <code>url</code> column, if not specified, base url will be use instead</li></ul></li>
+<li><strong><code>post_vars_cookie</code></strong> contains informations for post vars cookie creation <br>
+<ul><li>cookie <code>name</code>, <code>domain</code>, <code>secure</code> parameter and <code>http_only</code> parameter</li></ul></li>
+<li><strong><code>default_content_type</code></strong> contains default content type (default: <code>"HTML"</code>)</li>
+<li><strong><code>default_charset</code></strong> contains default content type (default: <code>"HTML"</code>)</li>
+<li><strong><code>cdn_url</code></strong> contains cdn url (for cdn html file load functions)</li>
+<li><strong><code>default_user_language</code></strong> contains default content type (default: <code>"en"</code>)</li>
+<li><strong><code>translations_table</code></strong> contains translations table name (for translations functions)</li>
+<li><strong><code>time_zone</code></strong> contains default content type (default: <code>"HTML"</code>)</li>
+<li><strong><code>login_management</code></strong> allows or not login management (default: <code>"false"</code>)</li>
+<li><strong><code>accounts_tables</code></strong>: <br>
+<ul><li>main <code>accounts</code> table which contains all accounts</li>
+<li>accounts <code>infos</code> table which  contains secondary infos</li>
+<li>accounts <code>sessions</code> table which contains user login sessions</li>
+<li>accounts <code>requests</code> table which contains user requests</li>
+<li>accounts <code>permissions</code> table which contains user own permissions</li>
+<li>accounts <code>rights</code> table contains rights and their permissions</li></ul></li>
+<li><strong><code>prohibited_username</code></strong> sets prohibited usernames (e.g. <code>["username", "all"]</code>)</li>
+<li><strong><code>register</code></strong>: <br>
+<ul><li><code>verification</code> enables or not email verification (default: <code>"false"</code>)</li>
+<li><code>request_expire_delay</code> sets request expire delay (default: <code>2 days</code>)</li></ul></li>
+<li><strong><code>hash</code></strong> contains informations for cookie creation <br>
+<ul><li><code>algorithm</code> sets which algorithm will be used</li>
+<li><code>salt</code> sets hash salt (it is <em>recommended to leave this empty</em>)</li>
+<li><code>cost</code> sets hash cost (default: <code>10</code>)</li></ul></li>
+<li><strong><code>auth_key_cookie</code></strong> contains informations for auth key cookie creation <br>
+<ul><li>cookie <code>name</code>, <code>domain</code>, <code>secure</code> parameter and <code>http_only</code> parameter</li></ul></li>
+</ul>
+
+<p>These parameters are optional, the framework should work without them, but it will surely disable a few functionalities. <br>
+Want to use Oli functions as values? A build-in decoder is available through the config file, here’s all the syntaxes supported:</p>
+
+<ul>
+<li><strong><code>Setting:{$setting}</code></strong> for <code>$_Oli-&gt;getSetting($setting)</code></li>
+<li><strong><code>UrlParam:{$param}</code></strong> for <code>$_Oli-&gt;getUrlParam($param)</code></li>
+<li><strong><code>ShortcutLink:{$shortcut}</code></strong> for <code>$_Oli-&gt;getShortcutLink($shortcut)</code></li>
+<li><strong><code>Const:{$shortcut}</code></strong> for <code>$_Oli-&gt;getShortcutLink($shortcut)</code></li>
+<li><strong><code>Time:{$time}</code></strong> to convert any time in seconds. Supported times: <br>
+<ul><li>number followed by <code>year</code> or <code>years</code></li>
+<li>number followed by <code>month</code> or <code>months</code></li>
+<li>number followed by <code>week</code> or <code>weeks</code></li>
+<li>number followed by <code>day</code> or <code>days</code></li>
+<li>number followed by <code>hour</code> or <code>hours</code></li>
+<li>number followed by <code>minute</code> or <code>minutes</code></li>
+<li>if no pattern has been found, time will be directly returned (as seconds, without been converted)</li></ul></li>
+<li><strong><code>Size:{$size}</code></strong> to convert any file size in bytes. Supported sizes: <br>
+<ul><li>number followed by <code>TB</code> or <code>To</code> (1000:1 ratio)</li>
+<li>number followed by <code>GB</code> or <code>Go</code> (1000:1 ratio)</li>
+<li>number followed by <code>MB</code> or <code>Mo</code> (1000:1 ratio)</li>
+<li>number followed by <code>KB</code> or <code>Ko</code> (1000:1 ratio)</li>
+<li>number followed by <code>TiB</code> or <code>Tio</code> (1024:1 ratio)</li>
+<li>number followed by <code>GiB</code> or <code>Gio</code> (1024:1 ratio)</li>
+<li>number followed by <code>MiB</code> or <code>Mio</code> (1024:1 ratio)</li>
+<li>number followed by <code>KiB</code> or <code>Kio</code> (1024:1 ratio)</li>
+<li>if no pattern has been found, time will be directly returned (as bytes, without been converted)</li></ul></li>
+<li><strong><code>MediaUrl</code></strong> for <code>$_Oli-&gt;getMediaUrl()</code></li>
+<li><strong><code>DataUrl</code></strong> for <code>$_Oli-&gt;getDataUrl()</code></li>
+<li><strong><code>"{$value}"</code></strong> to return raw $value <br>
+<ul><li>this will be also used if no pattern has been found</li></ul></li>
+</ul>
+
+<p>Multiple parameter can be provided at the same time using the <code>|</code> separator. <br>
+Here’s some examples:</p>
+
+<ul>
+<li><code>"request_expire_delay": "Time:3 days"</code></li>
+<li><code>"algorithm": "Const:PASSWORD_DEFAULT"</code></li>
+<li><code>"name": "Setting:cookie_name"</code></li>
+<li><code>"domain": ".|UrlParam:domain"</code> (using separator)</li>
+</ul>
+
+
+
+<h3 id="including-addons">Including addons</h3>
+
+<p>This is something you would definitely use. <br>
+Remember that Oli automatically include all active addons but their classes have to be manually set. The config file allows you to set them easily. Just list all addons classes you want to set into the “<strong>addons</strong>” parameter as below:</p>
+
+<pre><code>"addons": [
+    {
+        "name": "Addon Name",
+        "var": "_VarWithoutSymbol",
+        "namespace": "\\NameSpace\\To\\",
+        "class": "ClassName"
+    }, { ... }
+]
+</code></pre>
+
+<p>The config file also allows you to configure these addons (if supported)! See <a href="#addonsconfig">next section</a> for this.</p>
+
+
+
+<h3 id="addons-configuration">Addons configuration</h3>
+
+<p>As Oli configuration, a parameter will be dedicated to an addon. This parameter have to be the addon “name” parameter used to set the addon class.</p>
+
+<p>A <strong>config.php</strong> file may also be created by the user, along with <strong>config.json</strong>, but it’s not recommended.</p>
+
+
+
+<h3 id="my-first-page">My first page!</h3>
+
+<p>Yay, you’ve done the configuration, now comes to the fun part: creating your website! <br>
+Go to the “<strong>content/theme/</strong>” folder and start edit “<strong>index.php</strong>” which is the default page of your website. Put anything you’d like in it, save and live changes on your browser!</p>
+
+<p>See the <a href="#">“How to create my first page” tutorial</a> for more info on what you can do. Also don’t forget to check the <a href="#">Oli documentation</a> to learn how to use all these functions.</p>
+
+
+
+<h3 id="bonus-moving-framework-files">Bonus: Moving framework files</h3>
+
+<p>Last thing you would want to do is moving “<strong>includes/</strong>” and “<strong>addons/</strong>” directories into another one. If you manage multiple Oli websites, you could be able to set the same framework files for all your websites. <br>
+So you could organize your files like this:</p>
+
+<pre><code>.../Oli/
+    addons/
+    includes/
+.../website/
+    content/
+    files
+</code></pre>
+
+<p>And, once directories are where you want, you can set the absolute path to them into the “<strong>source_path</strong>” parameter:</p>
+
+<pre><code>"source_path": "/.../Oli/"
+</code></pre>
+
+<p>If you don’t know how to get the absolute path, here’s two ways to get it:</p>
+
+<ul>
+<li>create a php file with <code>&lt;?php echo dirname(__FILE__) . '/'; ?&gt;</code> in it, and open it in your browser. It shows the absolute file to this file.</li>
+<li>create a oli page with <code>&lt;?php echo ABSPATH; ?&gt;</code> in it, and open it in your browser. It shows the absolute file to the directories of “<strong>content/</strong>” directory and other files.</li>
+</ul></div></body>
+</html>

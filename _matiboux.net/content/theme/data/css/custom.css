@@ -1,0 +1,28 @@
+/*\
+|*|
+|*|  Matiboux Stylesheet
+|*|  Copyright Matiboux 2015
+|*|
+|*|  Developper: Matiboux (http://matiboux.com/)
+|*|  Website: http://matiboux.com/
+|*|
+\*/
+
+/** Text Menu (switch to) */
+.switchTo > * > *:not(.text-muted) {
+	cursor: pointer;
+}
+
+/** Carousel */
+.carousel {
+	margin: 0 auto;
+}
+.carousel .message {
+    margin: 0;
+    padding: 0;
+    border: 0;
+	text-align: left;
+	color: #333;
+    font-size: 18px;
+    font-weight: 700;
+}

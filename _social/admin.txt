@@ -1,0 +1,27 @@
+- Rechercher un utilisateur ou un post
+  > Portion du nom d'utilisateur
+  > Portion du nom affiché
+
+- Editer les informations d'un utilisateur
+  > Modifier son nom d'utilisateur
+  > Créer une requête de changement de mot de passe
+  > Modifier son email
+  > Modifier sa date de naissance
+  > Modifier son grade
+  > Modifier la note administrateur
+  > Modifier les informations publiques
+
+- Gérer les posts d'un utilisateur
+  > Modifier le contenu de ses posts
+  > Supprimer ses posts
+
+- Voir les notifications d'un utilisateur
+  > Supprimer ses notifications
+
+- Se connecter en tant qu'un utilisateur
+  (connexion sans mot de passe)
+
+- Gérer les annonces
+  > Créer des annonces (notification ou post)
+  > Gérer les posts annonces (utilisateur @all)
+  > Gérer les notifications annonces (utilisateur @all) - SOON

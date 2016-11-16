@@ -1,0 +1,9 @@
+deny from all
+
+<FilesMatch ".(txt|bmp|jpg|jpeg|png|gif|htm|html)">
+	allow from all
+</FilesMatch>
+
+<FilesMatch ".(odt|ods|odp|odg|odc|odf|odb|odi|odm)">
+	allow from all
+</FilesMatch>

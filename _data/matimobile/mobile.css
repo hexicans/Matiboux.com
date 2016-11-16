@@ -1,0 +1,514 @@
+/*\
+|*|
+|*|  :: Mobile Emulation ::
+|*|
+|*|  Mobile Emulator (by Matiboux)
+|*|  Created the 9th September 2015
+|*|
+|*|  http://data.matiboux.com/mobile/
+|*|
+\*/
+
+
+/** BODY - BASIC */
+body {
+	min-width: 522px;
+}
+
+/** MESSAGE - LOADING ICON */
+.messages .loading-icon {
+	background: #fff;
+	max-width: 420px;
+	margin: 10px 30px;
+	padding: 20px 15px 15px;
+	color: #333;
+	font-size: 24px;
+	text-align: center;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
+}
+
+/** MAIN SETTINGS - FORM */
+.main.settings > .container-fluid {
+	max-width: 750px;
+}
+.main.settings .content {
+	padding: 10px 0;
+}
+.main.settings .form {
+	text-align: left;
+}
+
+
+/** MOBILE - BASIC */
+.mobile {
+	margin: 30px 0 50px;
+	color: #333;
+	text-align: center;
+}
+.mobile {
+	margin: 30px 0 50px;
+	color: #333;
+	text-align: center;
+}
+.mobile > .container,
+.mobile > .container-fluid {
+	background: #000;
+	max-width: 482px;
+	padding: 0;
+	color: #333;
+	border: 1px solid #222;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+}
+.mobile * {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+/** MOBILE - STATUS BAR */
+.mobile .status-bar {
+	background: #222;
+	height: 26px;
+	padding: 0 5px;
+	color: #fff;
+	border-bottom: 1px solid #444;
+}
+.mobile .status-bar > .left-side {
+	float: left;
+	margin: 0;
+}
+.mobile .status-bar > .right-side {
+	float: right;
+	margin: 0;
+}
+.mobile .status-bar > .left-side > *,
+.mobile .status-bar > .right-side > * {
+	display: inline-block;
+	float: left;
+	padding: 3px;
+}
+
+.mobile .status-bar > .left-side > .notifications > * {
+	display: inline-block;
+	float: left;
+	padding: 0 3px;
+}
+
+.mobile .status-bar > .right-side > .signals > * {
+	display: inline-block;
+	float: left;
+	padding: 0 3px;
+}
+.mobile .status-bar > .right-side > .battery.critical {
+	color: #ff6877;
+}
+
+
+/** MOBILE - CONTENT */
+.mobile .content {
+	background: #fff;
+	height: 660px;
+	margin: 0;
+}
+
+	/** Home */
+	.mobile .content.full-screen {
+		background: #222;
+		height: 720px;
+		padding: 210px 0;
+		color: #fff;
+		text-align: center;
+	}
+	.mobile .content.full-screen > .icon {
+		padding: 10px;
+		font-size: 42px;
+	}
+	.mobile .content.full-screen > .text {
+		padding: 5px 0;
+		font-size: 30px;
+	}
+
+	/** Home */
+	.mobile .content#home {
+		background: linear-gradient(60deg, rgba(255, 165, 150, 0.4) 5%, rgba(0, 228, 255, 0.2)), url("home-background.png");
+		color: #fff;
+	}
+	.mobile .content#home > .search-form {
+		background: transparent;
+		height: 60px;
+		padding: 10px 20px;
+		color: #fff;
+	}
+	.mobile .content#home > .search-form > .search-group {
+		background: #0084b4;
+		height: 40px;
+		border-radius: 3px;
+	}
+	.mobile .content#home > .search-form > .search-group > * {
+		display: inline-block;
+		height: 30px;
+		line-height: 30px;
+		float: left;
+	}
+	.mobile .content#home > .search-form > .search-group > .query {
+		width: 390px;
+		height: 40px;
+		padding: 5px 10px;
+		float: left;
+		color: #333;
+		border: 0;
+		border: 1px solid #ddd;
+		border-radius: 3px 0 0 3px;
+	}
+	.mobile .content#home > .search-form > .search-group > .reset {
+		background: transparent;
+		display: inline-block;
+		position: relative;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-left: -40px;
+		padding: 0;
+		float: left;
+		color: #333;
+		font-size: 18px;
+		text-align: center;
+		border: 0;
+		cursor: pointer;
+	}
+	.mobile .content#home > .search-form > .search-group > .reset:hover,
+	.mobile .content#home > .search-form > .search-group > .reset:focus {
+		background: rgba(0, 0, 0, 0.1);
+		outline: 0;
+	}
+	.mobile .content#home > .search-form > .search-group > .submit {
+		background: #0084b4;
+		display: inline-block;
+		width: 50px;
+		height: 40px;
+		padding-bottom: 3px;
+		float: left;
+		font-size: 20px;
+		text-align: center;
+		border: 0;
+		border-radius: 0 3px 3px 0;
+		cursor: pointer;
+	}
+	.mobile .content#home > .search-form > .search-group > .submit:hover,
+	.mobile .content#home > .search-form > .search-group > .submit:focus {
+		background: rgba(0, 0, 0, 0.1);
+		outline: 0;
+	}
+
+	.mobile .content#home > .apps {
+		position: relative;
+		height: 560px;
+		margin: 0;
+		padding: 0 10px;
+		list-style-type: none;
+	}
+	.mobile .content#home > .apps > * {
+		display: inline-block;
+		width: 112px;
+		margin: 0;
+		padding: 5px;
+	}
+
+	.mobile .content#home > .apps > li > i {
+		background: rgba(0, 0, 0, 0.2);
+		display: inline-block;
+		width: 60px;
+		height: 60px;
+		line-height: 40px;
+		padding: 10px;
+		font-size: 36px;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	.mobile .content#home > .apps > li > i:hover,
+	.mobile .content#home > .apps > li > i:focus {
+		background: rgba(0, 0, 0, 0.3);
+		outline: 0;
+	}
+	.mobile .content#home > .apps > li > label {
+		margin-top: 5px;
+		margin-bottom: 0;
+		font-size: 18px;
+		font-weight: 500;
+		text-shadow: 0 0 10px #222;
+		cursor: pointer;
+	}
+	.mobile .content#home > .apps > li > label:hover,
+	.mobile .content#home > .apps > li > label:focus {
+		text-decoration: underline;
+	}
+
+	.mobile .content#home > .shortcuts {
+		background: rgba(0, 132, 180, 0.5);;
+		height: 40px;
+		margin: 0;
+		padding: 0;
+		color: #fff;
+		list-style-type: none;
+	}
+	.mobile .content#home > .shortcuts > * {
+		display: inline-block;
+		width: 25%;
+		height: 40px;
+		float: left;
+		line-height: 40px;
+		font-size: 24px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.mobile .content#home > .shortcuts > *:hover,
+	.mobile .content#home > .shortcuts > *:focus {
+		background: rgba(0, 0, 0, 0.1);
+		outline: 0;
+	}
+
+	/** ChatApp */
+	.mobile .content[app='ChatApp'] > .header {
+		background: #0084b4;
+		height: 40px;
+		color: #fff;
+	}
+	.mobile .content[app='ChatApp'] > .header > * {
+		display: inline-block;
+		height: 40px;
+		float: left;
+		line-height: 40px;
+	}
+	.mobile .content[app='ChatApp'] > .header > .menu-toggle,
+	.mobile .content[app='ChatApp'] > .header > .go-home-tab {
+		width: 40px;
+		font-size: 18px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.mobile .content[app='ChatApp'] > .header > .menu-toggle:hover,
+	.mobile .content[app='ChatApp'] > .header > .menu-toggle:focus,
+	.mobile .content[app='ChatApp'] > .header > .go-home-tab:hover,
+	.mobile .content[app='ChatApp'] > .header > .go-home-tab:focus {
+		background: rgba(255, 255, 255, 0.1);
+		outline: 0;
+	}
+	.mobile .content[app='ChatApp'] > .header > .title {
+		padding: 0 10px;
+		font-size: 16px;
+	}
+
+	.mobile .content[app='ChatApp'] > .side-menu {
+		background: #fff;
+		/*display: none;*/
+		position: absolute;
+		width: 320px;
+		height: 620px;
+		box-shadow: 5px 0px 5px -2px rgba(0, 0, 0, .1);
+	}
+
+	.mobile .content[app='ChatApp'] > .side-menu > .header {
+		background: linear-gradient(60deg, rgba(255, 165, 150, 0.3) 5%, rgba(0, 228, 255, 0.15));
+		height: 121px;
+		padding: 15px;
+		text-align: left;
+		border-bottom: 1px solid #888;
+	}
+	.mobile .content[app='ChatApp'] > .side-menu > .header > .avatar {
+		width: 90px;
+		height: 90px;
+		padding: 10px;
+		float: left;
+	}
+	.mobile .content[app='ChatApp'] > .side-menu > .header > .avatar > img {
+		width: 70px;
+		height: 70px;
+		border-radius: 5px;
+	}
+	.mobile .content[app='ChatApp'] > .side-menu > .header > .name:before {
+		font-size: 16px;
+		font-weight: 500;
+		content: "Welcome, ";
+	}
+	.mobile .content[app='ChatApp'] > .side-menu > .header > .name {
+		line-height: 70px;
+		padding: 10px;
+		float: left;
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	.mobile .content[app='ChatApp'] > .side-menu > .tabs {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	.mobile .content[app='ChatApp'] > .side-menu > .tabs + .tabs {
+		border-top: 1px solid #888;
+	}
+	.mobile .content[app='ChatApp'] > .side-menu > .tabs > *  {
+		background: #c8e6e6;
+		display: inline-block;
+		width: 100%;
+		margin: 0;
+		padding: 5px 10px;
+		font-size: 18px;
+	}
+
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list {
+		height: 580px;
+		overflow-y: scroll;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list > .channel-link {
+		background: #c8e6e6;
+		height: 40px;
+		line-height: 30px;
+		margin: 10px;
+		padding: 5px 10px;
+		text-align: left;
+		cursor: pointer;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list > .channel-link + .app-tab#channel-link {
+		border-top: 1px solid #ddd;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list > .channel-link:hover,
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list > .channel-link:focus {
+		background: rgba(0, 0, 0, 0.1);
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list > .channel-link > .partner-name {
+		float: left;
+		font-size: 18px;
+		font-weight: 700;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list > .channel-link > .last-message {
+		float: right;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list > .channel-link > .last-message > * {
+		display: inline-block;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list > .channel-link > .last-message > .text {
+		font-size: 15px;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#channel-list > .channel-link > .last-message > .meta {
+		padding-left: 3px;
+		font-size: 11px;
+		font-style: italic;
+	}
+
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box {
+		height: 620px;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .messages-zone {
+		height: 580px;
+		overflow-y: scroll;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .messages-zone > .message {
+		width: 310px;
+		padding: 10px;
+		float: left;
+		text-align: left;
+		border-radius: 3px;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .messages-zone > .message + .message {
+		padding-top: 0;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .messages-zone > .message[author='you'] {
+		float: right;
+		text-align: right;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .messages-zone > .message > * {
+		display: inline-block;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .messages-zone > .message > .meta {
+		padding: 5px;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .messages-zone > .message > .body {
+		background: #c8e6e6;
+		padding: 5px 10px;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .messages-zone > .message > .body > .author {
+		font-size: 15px;
+		font-weight: 700;
+	}
+
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .new-message {
+		background: #0084b4;
+		height: 40px;
+		color: #fff;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .new-message > .inputs > .message-input {
+		width: 400px;
+		height: 40px;
+		padding: 5px 10px;
+		float: left;
+		color: #333;
+		border: 0;
+		border-top: 1px solid #ddd;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .new-message > .inputs > .reset-button {
+		background: transparent;
+		display: inline-block;
+		position: relative;
+		width: 40px;
+		height: 40px;
+		margin-left: -40px;
+		padding: 0;
+		line-height: 40px;
+		float: left;
+		color: #333;
+		font-size: 18px;
+		text-align: center;
+		border: 0;
+		cursor: pointer;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .new-message > .inputs > .reset-button:hover,
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .new-message > .inputs > .reset-button:focus {
+		background: rgba(0, 0, 0, 0.1);
+		outline: 0;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .new-message > .side-tools > * {
+		background: transparent;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		float: left;
+		font-size: 18px;
+		text-align: center;
+		border: 0;
+		cursor: pointer;
+	}
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .new-message > .side-tools > *:hover,
+	.mobile .content[app='ChatApp'] > .app-tab#chat-box > .new-message > .side-tools > *:focus {
+		background: rgba(255, 255, 255, 0.1);
+		outline: 0;
+	}
+
+
+/** MOBILE - NAV BAR */
+.mobile .nav-bar {
+	background: #222;
+	height: 34px;
+	margin: 0;
+	bottom: 0;
+	color: #fff;
+	border-top: 1px solid #444;
+}
+.mobile .nav-bar > * {
+	display: inline-block;
+	width: 33.33333%;
+	float: left;
+    font-size: 24px;
+    line-height: 33px;
+	cursor: pointer;
+}
+.mobile .nav-bar > *:hover,
+.mobile .nav-bar > *:focus {
+	background: rgba(255, 255, 255, 0.1);
+    outline: 0;
+}

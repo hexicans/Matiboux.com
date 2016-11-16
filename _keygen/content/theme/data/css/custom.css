@@ -1,0 +1,19 @@
+/*\
+|*|
+|*|  KeyGen Stylesheet
+|*|  Copyright Matiboux 2015
+|*|
+|*|  Developper: Matiboux (http://matiboux.com/)
+|*|  Website: http://keygen.matiboux.com/
+|*|
+\*/
+
+/** Text Menu (switch to) */
+.switchTo > * > *:not(.text-muted) {
+	cursor: pointer;
+}
+
+/** Generated Message */
+#generated-message {
+	word-wrap: break-word;
+}

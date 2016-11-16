@@ -1,0 +1,36 @@
+- Poster du texte (avec ou sans image)
+- Supprimer ses posts
+- Suivre des personnes ou être suivi
+- Voir sa timeline (et les annonces)
+- Répondre à un post
+- Liker un post
+
+- Voir ses notifications
+  > Annonce (normales et importantes)
+  > Réponses à ses posts
+  > Mentions à son nom
+  > Likes donnés à ses posts
+
+- Gérer ses paramètres
+  > Modifier son avatar
+  > Modifier sa langue (ne change rien pour le moment)
+  > Modifier ses informations publiques
+  > Créer une requête de changement de mot de passe
+  > Choisir de cacher les annonces
+- Gérer ses images
+- Gérer ses sessions
+- Gérer ses requêtes
+
+- Rechercher un utilisateur ou un post
+  > Portion du nom d'utilisateur
+  > Portion du nom affiché
+  > Portion du contenu d'un post
+
+- Voir le profil d'un utilisateur
+  > Voir ses posts
+  > Voir ses abonnements
+  > Voir ses abonnés
+
+- Contacter le support
+  > Créer un ticket
+  > Être notifié d'une réponse

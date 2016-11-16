@@ -1,0 +1,42 @@
+/*\
+|*|
+|*|  Matiboux Manager Stylesheet
+|*|  Copyright Matiboux 2015
+|*|
+|*|  Developper: Matiboux (http://matiboux.com/)
+|*|  Website: http://manager.matiboux.com/
+|*|
+\*/
+
+/** Messenger */
+.conversation {
+	border: 1px solid #eee;
+}
+.conversation > * {
+	padding: 10px;
+}
+.conversation > *:not(:first-child) {
+	border-top: 2px solid #888;
+}
+
+.conversation > * > .infos {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #eee;
+}
+.conversation > * > .infos > * {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.conversation > * > .infos > .author > * {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.conversation > * > .infos > .date {
+    position: relative;
+    top: -22px;
+    float: right;
+}
+
+.conversation > * > .content {
+	padding: 10px;
+}

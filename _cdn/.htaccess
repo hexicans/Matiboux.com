@@ -1,0 +1,5 @@
+Options +Indexes
+
+<FilesMatch ".(eot|ttf|svg|otf|woff)">
+	Header set Access-Control-Allow-Origin "*"
+</FilesMatch>

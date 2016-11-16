@@ -1,0 +1,9 @@
+DirectoryIndex index.php
+ErrorDocument 404 /index.php
+ErrorDocument 403 /index.php
+
+#RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^(www\.)?matiboux\.com [NC]
+#RewriteRule ^(.*)$ http://projects.matiboux.com/status/ [R=301]
+
+#DirectoryIndex index.php index.html

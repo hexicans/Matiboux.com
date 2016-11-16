@@ -1,0 +1,1 @@
+<?php include THEMEPATH . 'index.php'; ?>

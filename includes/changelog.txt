@@ -1,0 +1,362 @@
+< Oli PHP Framework - Changelog.txt >
+
+Copyright Matiboux 2015
+Developer: Matiboux
+
+
+	*** ---------------- ***
+	*** Version BETA 1.7 ***
+	*** ---------------- ***
+
+Version 1.7.0 - Not yet.
+	[type] [of::what() you] want
+
+
+	*** ---------------- ***
+	*** Version BETA 1.6 ***
+	*** ---------------- ***
+
+Version 1.6.6 - Currently in developpement..
+	This update is about:
+	- NEW FEATURES (USER MANAGEMENT)
+	
+	[Add] [OliCore::$defaultUserLanguage variable] Added new variable: Contain the default user language (default: 'en')
+	[Add] [OliCore::setDefaultUserLanguage() function] Added new function: Set the default user language
+		Parameter string $language (facultative, default: 'en')
+	[Add] [OliCore::getDefaultUserLanguage() function] Added new function: Get the default user language
+	[Add] [OliCore::$currentUserLanguage variable] Added new variable: Contain the default user language (default: 'en')
+	[Add] [OliCore::setCurrentUserLanguage() function] Added new function: Set the current user language
+		Parameter string $language (facultative, default: 'DEFAULT')
+			'DEFAULT' means OliCore::$defaultUserLanguage
+	[Add] [OliCore::getCurrentUserLanguage() function] Added new function: Get the current user language
+	[Add] [OliCore::__construct() function] Add User Language Setup to default user language
+	[Add] [OliCore::setUserLanguage() function] Added new function: Change the user language in the database
+		Parameter string $language (facultative, default: 'DEFAULT')
+			'DEFAULT' means OliCore::$defaultUserLanguage
+		Parameter string $where (facultative, default: [])
+			if empty and connected, set $where to array('username' => OliCore::getAuthKeyOwner())
+	[Add] [OliCore::getUserLanguage() function] Added new function: Get the user language in the database
+		Parameter string $where (facultative, default: [])
+			if $where is empty and connected, set $where to array('username' => OliCore::getAuthKeyOwner())
+		Parameter string $caseSensitive (facultative, default: true)
+		Parameter string $forceArray (facultative, default: true)
+		Parameter string $rawResult (facultative, default: true)
+	[Add] [OliCore::verifyAuthKey() function] Add User Language Management:
+		If connected, set user language to his own language
+	[Update] [OliCore::setSettingsTables() function] Change some condition rules
+	[Bugfix] [OliCore::__toString() function] Miscalled constant variables
+	[Add] [OliCore::__() function] Add Translated Texts Management:
+		Parameter string $text
+			Is the text in the default language
+			Then go search for tranlation in tranlations file
+		Parameter string $text_plural (facultative, default: '')
+			Is the text in the default language (in plural form)
+			Then go search for tranlation in tranlations file
+		Parameter string $count (facultative, default: 0)
+			Is the count to choose between $text or $text_plural
+				($count > 1) ? $text_plural : $text;
+	[Add] [OliCore::$accountsPermissionsTable variable] Added new variable: Contain the accounts permissions table (default: '')
+	[Add] [OliCore::setAccountsPermissionsTable() function] Added new function: Set the accounts permissions table
+		Parameter string $table
+	[Update] [OliCore::getUserRight() function] If $where is empty and connected, set $where to array('username' => OliCore::getAuthKeyOwner())
+	[Add] [OliCore::translateUserRight() function] Added right acronym management
+	[Add] [OliCore::translateAccountsTableCode() function] Added PERMISSIONS table code
+	[Add] [OliCore::setRightPermissions() function] Added new function: Set permissions to right
+		Parameter string $permissions
+		Parameter string $userRight
+	[Add] [OliCore::addRightPermissions() function] Added new function: Add specified permissions to right
+		Parameter string $permissions
+		Parameter string $userRight
+	[Add] [OliCore::removeRightPermissions() function] Added new function: Remove specified permissions from right
+		Parameter string $permissions
+		Parameter string $userRight
+	[Add] [OliCore::deleteRightPermissions() function] Added new function: Delete all permissions from right
+		Parameter string $userRight
+	[Add] [OliCore::isRightPermitted() function] Added new function: Check if right allow the specified permission
+		Parameter string $permission
+	[Add] [OliCore::setUserPermissions() function] Added new function: Set permissions to user
+		Parameter string $permissions
+		Parameter string $userRight
+	[Add] [OliCore::addUserPermissions() function] Added new function: Add specified permissions to user
+		Parameter string $permissions
+		Parameter string $userRight
+	[Add] [OliCore::removeUserPermissions() function] Added new function: Remove specified permissions from user
+		Parameter string $permissions
+		Parameter string $userRight
+	[Add] [OliCore::deleteUserPermissions() function] Added new function: Delete all permissions from user
+		Parameter string $userRight
+	[Add] [OliCore::isUserPermitted() function] Added new function: Check if user has specified permission (owns + right permissions)
+		Parameter string $permission
+
+Version 1.6.5 - Released on 6 May 2016
+	This update is about:
+	- BUGFIXES AND OPTIMIZATION
+	- IMPROVEMENT FOR APIs
+	
+	[Add] [OliCore::verifyAuthKey() function] Add $authKey parameter
+		$authKey has priority on current user Auth Key:
+		If $authKey is empty, use current user Auth Key (which can be empty if disconnected)
+	[Add] [OliCore::getAuthKeyOwner() function] Add $authKey parameter
+		$authKey has priority on current user Auth Key:
+		If $authKey is empty, use current user Auth Key (which can be empty if disconnected)
+	[Update] [OliCore::dateDifference() function] Rename $detail parameter to $details
+	[Update] [OliCore::dateDifference() function] If $precise is true, ALWAYS shows details
+	[Add] [OliCore::minimizeScriptSize() function] Setup Minimize Script Size Method
+	[Add] [OliCore::loadLocalScript() function] Add Minimize Management
+	[Add] [OliCore::loadCdnScript() function] Add Minimize Management
+	[Add] [OliCore::getLinesMySQL() function] New $forceArray parameter (facultative, default: false)
+		If true, always return results in an array
+	[Add] [OliCore::getLinesMySQL() function] New $forceArray parameter (facultative, default: false)
+		If true, always return results in an array
+	[Update] [loader.php] Now fetch Oli scripts in includes/ and includes/[any directory]/.
+	[Update] [loader.php] Now fetch addons in addons/ and addons/[any directory]/.
+	[Add] [OliCore::getAccountLines() function] New $forceArray parameter (facultative, default: false)
+		If true, always return results in an array
+	[Add] [OliCore::getAccountInfos() function] New $forceArray parameter (facultative, default: false)
+		If true, always return results in an array
+	[Update] [login.php] Change NOT_ACTIVATED condition for login.
+		Right == NEW-USER instead of >= NEW-USER
+	[Update] [OliCore::getDataMySQL() function] Change $parameters condition: now use empty()
+		empty($parameters) instead of $parameters == ''
+	[Add] [login.php] Added new UNKNOWN_USER error code: shown when no account with the same username exists
+	[Update] [OliCore::loginAccount() function] Rename old $cookie_duration parameter to $cookieDuration
+	[Add] [login.php] Added new "remember me" input
+		If active, login duration will be about 15 days (15*24*3600)
+		Else, login duration will be about 1 day (24*3600 / default value of OliCore::loginAccount() function)
+	[Update] [OliCore::getAuthKeyOwner() function] Change $authKey parameter default value to null instead of '' (facultative)
+	[Update] [OliCore::verifyAuthKey() function] Change $authKey parameter default value to null instead of '' (facultative)
+	[Update] [OliCore::getAuthKeyOwner() function] Change how the $authKey variable is set
+	[Update] [OliCore::verifyAuthKey() function] Change how the $authKey variable is set
+	[Update] [OliCore::getAuthKeyOwner() function] Provide $authKey parameter to verifyAuthKey() function
+	[Add] [OliCore::setCookie() function] Added new function: Set a cookie
+		Parameter string $name
+		Parameter mixed $value
+		Parameter integer $expireDelay
+		Parameter string $path
+		Parameter string $domain
+		Parameter boolean $secure (facultative, default: false)
+		Parameter boolean $httpOnly (facultative, default: false)
+	[Add] [OliCore::deleteCookie() function] Added new function: Delete a cookie
+		Parameter string $name
+		Parameter string $path
+		Parameter string $domain
+		Parameter boolean $secure (facultative, default: false)
+		Parameter boolean $httpOnly (facultative, default: false)
+	[Add] [OliCore::getCookieContent() function] Added new function: Set a cookie
+		Parameter string $name
+		Parameter string $rawResult (facultative, default: false)
+	[Add] [OliCore::isEmptyCookie() function] Added new function: is a Cookie Empty
+		Parameter string $name
+	[Update] [OliCore::setPostVarsCookie() function] Now use OliCore::setCookie() function instead of setCookie() PHP function
+	[Update] [OliCore::setPostVarsCookie() function] Now set OliCore::$postVarsProtection variable value BEFORE use (and return) OliCore::setCookie() function
+	[Update] [OliCore::deletePostVarsCookie() function] Now use OliCore::deleteCookie() function instead of setCookie() PHP function
+	[Update] [OliCore::protectPostVarsCookie() function] Now use OliCore::setCookie() function instead of setCookie() PHP function
+	[Update] [OliCore::getRawPostVars() function] Now use OliCore::getCookieContent() function instead of $_COOKIE PHP global variable
+		OliCore::getCookieContent() function parameters:
+			$name parameter = $this->postVarsCookieName,
+			$rawResult parameter = true
+	[Update] [OliCore::getPostVars() function] Now use OliCore::getCookieContent() function instead of $_COOKIE PHP global variable
+		OliCore::getCookieContent() function parameters:
+			$name parameter = $this->postVarsCookieName
+	[Update] [OliCore::isEmptyPostVars() function] Now use OliCore::isEmptyCookie() function instead of empty() PHP function
+		OliCore::isEmptyCookie() function parameters:
+			$name parameter = $this->postVarsCookieName
+	[Update] [OliCore::setAuthKeyCookie() function] Now use OliCore::setCookie() function instead of setCookie() PHP function
+	[Update] [OliCore::deleteAuthKeyCookie() function] Now use OliCore::deleteCookie() function instead of setCookie() PHP function
+	[Update] [OliCore::getAuthKey() function] Now use OliCore::getCookieContent() function instead of $_COOKIE PHP global variable
+		OliCore::getCookieContent() function parameters:
+			$name parameter = $this->authKeyCookieName
+	[Add] [OliCore::getOption() function] Added method when $option is empty:
+		Return all the differents options in an array
+	[Add] [OliCore::getSummedInfosMySQL() function] Added function which add every value to the previous one and return the result
+	[Update] [OliCore::getUrlParam() function] Rename $id parameter to $param
+	[Update] [OliCore::getUrlParam() function] Change some $param entries conditions
+	[Add] [OliCore::getUrlParam() function] Add 'all' as accepted entry for $param parameter:
+		It will return all params in an array (like this: [id => 'param', ...])
+	[Bugfix] [OliCore::getUrlParam() function] Change some $param entries conditions:
+		0 entry returned the same result as null entry
+	[Update] [OliCore::updateInfosMySQL() function] New $where entry:
+		If $where is 'all', do not add WHERE condition to sql request (request will act on ALL data)
+		/!\ To avoid mistakes, $where is still required and must be 'all' to act on ALL data
+	[Update] [OliCore::deleteLinesMySQL() function] New $where entry:
+		If $where is 'all', do not add WHERE condition to sql request (request will act on ALL data)
+		/!\ To avoid mistakes, $where is still required and must be 'all' to act on ALL data
+	[Update] [OliCore::getSummedInfosMySQL() function] Removed $forceArray parameter
+	[Bugfix] [OliCore::getSummedInfosMySQL() function] For foreach use, force $forceArray parameter to true in OliCore::getInfosMySQL()
+	[Update] [OliCore::getSummedInfosMySQL() function] Removed $rawResult parameter
+	[Bugfix] [OliCore::verifyAuthKey() function] Now verify if user's session is expired or not
+	[Bugfix] [OliCore::getLinesMySQL() function] Now verify if table is empty before check for values
+	[Bugfix] [OliCore::getInfosMySQL() function] Now verify if table is empty before check for values
+	[Bugfix] [OliCore::isExistInfosMySQL() function] Now verify if table is empty before check for values
+
+Version 1.6.4 - Released on 10 February 2016
+	[Bugfix] [OliCore::setAuthKeyCookie() function] Rename old OliCore::$authKeyCookie_domain variable to OliCore::$authKeyCookieDomain
+	[Bugfix] [OliCore::setAuthKeyCookie() function] Rename old OliCore::$authKeyCookie_secure variable to OliCore::$authKeyCookieSecure
+	[Bugfix] [OliCore::setAuthKeyCookie() function] Rename old OliCore::$authKeyCookie_httpOnly variable to OliCore::$authKeyCookieHttpOnly
+	[Bugfix] [OliCore::deleteAuthKeyCookie() function] Rename old OliCore::$authKeyCookie_domain variable to OliCore::$authKeyCookieDomain
+	[Bugfix] [OliCore::deleteAuthKeyCookie() function] Rename old OliCore::$authKeyCookie_secure variable to OliCore::$authKeyCookieSecure
+	[Bugfix] [OliCore::deleteAuthKeyCookie() function] Rename old OliCore::$authKeyCookie_httpOnly variable to OliCore::$authKeyCookieHttpOnly
+	[Bugfix] [OliCore::setPostVarsCookie() function] Rename old OliCore::$authKeyCookie_domain variable to OliCore::$postVarsCookieDomain
+	[Bugfix] [OliCore::setPostVarsCookie() function] Rename old OliCore::$authKeyCookie_secure variable to OliCore::$postVarsCookieSecure
+	[Bugfix] [OliCore::setPostVarsCookie() function] Rename old OliCore::$authKeyCookie_httpOnly variable to OliCore::$postVarsCookieHttpOnly
+	[Bugfix] [OliCore::deletePostVarsCookie() function] Rename old OliCore::$authKeyCookie_domain variable to OliCore::$postVarsCookieDomain
+	[Bugfix] [OliCore::deletePostVarsCookie() function] Rename old OliCore::$authKeyCookie_secure variable to OliCore::$postVarsCookieSecure
+	[Bugfix] [OliCore::deletePostVarsCookie() function] Rename old OliCore::$authKeyCookie_httpOnly variable to OliCore::$postVarsCookieHttpOnly
+	[Bugfix] [OliCore::protectPostVarsCookie() function] Rename old OliCore::$authKeyCookie_domain variable to OliCore::$postVarsCookieDomain
+	[Bugfix] [OliCore::protectPostVarsCookie() function] Rename old OliCore::$authKeyCookie_secure variable to OliCore::$postVarsCookieSecure
+	[Bugfix] [OliCore::protectPostVarsCookie() function] Rename old OliCore::$authKeyCookie_httpOnly variable to OliCore::$postVarsCookieHttpOnly
+	[Add] [OliCore::createTableMySQL() function] Added new function: Create new Table (if table does not exist)
+	[Add] [OliCore::clearTableMySQL() function] Added new function: Clear the Table (Delete all data)
+	[Add] [OliCore::deleteTableMySQL() function] Added new function: Delete the Table
+	[Add] [OliCore::addColumnTableMySQL() function] Added new function: Add column in Table
+	[Add] [OliCore::updateColumnTableMySQL() function] Added new function: Update column in Table
+	[Add] [OliCore::renameColumnTableMySQL() function] Added new function: Rename column in Table
+	[Add] [OliCore::deleteColumnTableMySQL() function] Added new function: Delete column in Table
+	[Update] [OliCore::getInfosMySQL() function] Removed break PHP statement
+	[Update] [OliCore::isExistInfosMySQL() function] What to inspect:
+		If $while is empty,
+			If $eachLine is not empty, return true
+	[Bugfix] [OliCore::loginAccount() function] Bug with $username case:
+		If login succeed, set $username variable to real username to have the exact same case
+	[Add] [login.php] Add management for HTTP Referer (redirect after login)
+	[Add] [OliCore::getOption() function] New method:
+		If option is 'null', return empty string.
+	[Add] [OliCore::$setupClassTimestamp variable] Added new variable: Contain the OliCore class's setup timestamp
+	[Add] [OliCore::__construct() function] Now set the OliCore::$setupClassTimestamp to microtime(true) PHP function value
+	[Add] [OliCore::getExecuteDelay() function] Added new function: Get script execution delay
+		Parameter boolean $fromRequest:
+			If $fromRequest is true, return the delay between start request and now
+			Else, return the delay between start script and now
+	[Update] [OliCore::deleteFullAccount() function] Second parameter $username changed to $where array
+	[Update] [OliCore::deleteFullAccount() function] OliCore::deleteAccountInfos() now use $where as where parameter
+	[Bugfix] [OliCore::updateUserRight() function] Execute OliCore::updateAccountInfos() on ACCOUNTS table instead of Accounts RIGHTS table
+	[Update] [OliCore::verifyAuthKey() function] If connected, now update 'update_date' var to current datetime in Accounts SESSION table
+	[Add] [OliCore::verifyAuthKey() function] Execute OliCore::verifyAuthKey() function to update 'update_date' var of Account's Active Session
+	[Update] [OliCore::registerAccount() function] Set 'register_date' var to current datetime ('Y-m-d H:i:s') intead of current date ('Y-m-d') in Accounts table
+	[Update] [login.php] Now watch for 'activate' request action before activeate user
+	[Update] [OliCore::registerAccount() function] If account activation, create request with 'activate' action
+	[Update] [OliCore::isExistInfosMySQL() function] Now handle multiple $where target
+	[Update] [OliCore::isExistInfosMySQL() function] Now return number of infos found (or false if nothing was found)
+	[Add] [OliCore::dateDifference() function] Added new function: Calculate time difference between two dates
+		Can return years, days, hours, minutes and seconds
+		Precise mode returns all these timeunits
+		Not Precise mode returns the higher not null value
+		Detail parameter return an array with units as array keys
+	[Update] [OliCore::getLinesMySQL() function] Now handle $where value type array target
+	[Update] [OliCore::getLinesMySQL() function] Now handle array data to return
+	[Update] [OliCore::getInfosMySQL() function] Now handle $where value type array target
+	[Update] [OliCore::getInfosMySQL() function] Now handle array data to return
+	[Update] [OliCore::isExistInfosMySQL() function] Now handle $where value type array target
+	[Update] [OliCore::insertLineMySQL() function] Now handle $matches value type array target
+	[Update] [OliCore::updateInfosMySQL() function] Now handle $what ans $where value type array target
+	[Update] [OliCore::deleteLinesMySQL() function] Now handle $where value type array target
+	[Update] [OliCore::getFirstInfoMySQL() function] Now handle array data to return
+	[Update] [OliCore::getLastInfoMySQL() function] Now handle array data to return
+	[Add] [OliCore::getFirstInfoMySQL() function] New $rawResult parameter for Array results (facultative, default: false)
+		If true, give the raw value found in the table (ex: string / serialized Array)
+		Else, give the readable value found in the table (ex: string / unserialized Array)
+	[Add] [OliCore::getLastInfoMySQL() function] New $rawResult parameter for Array results (facultative, default: false)
+		If true, give the raw value found in the table (ex: string / serialized Array)
+		Else, give the readable value found in the table (ex: string / unserialized Array)
+	[Add] [OliCore::getLinesMySQL() function] New $rawResult parameter for Array results (facultative, default: false)
+		If true, give the raw value found in the table (ex: string / serialized Array)
+		Else, give the readable value found in the table (ex: string / unserialized Array)
+	[Add] [OliCore::getInfosMySQL() function] New $rawResult parameter for Array results (facultative, default: false)
+		If true, give the raw value found in the table (ex: string / serialized Array)
+		Else, give the readable value found in the table (ex: string / unserialized Array)
+	[Update] [OliCore::getLinesMySQL() function] Now handle $where universal var "*"
+		If $where var = '*', search for $where value in every var
+	[Update] [OliCore::getInfosMySQL() function] Now handle $where universal var "*"
+		If $where var = '*', search for $where value in every var
+	[Update] [OliCore::isExistInfosMySQL() function] Now handle $where universal var "*"
+		If $where var = '*', search for $where value in every var
+	[Bugfix] [OliCore::getLinesMySQL() function] Rewrite & Optimize the script
+	[Bugfix] [OliCore::getInfosMySQL() function] Rewrite & Optimize the script
+	[Bugfix] [OliCore::isExistInfosMySQL() function] Rewrite & Optimize the script
+	[Bugfix] [OliCore::getLinesMySQL() function] Remove some break; PHP statement
+		It broke the $where foreach
+	[Bugfix] [OliCore::getInfosMySQL() function] Remove some break; PHP statement
+		It broke the $where foreach
+	[Bugfix] [OliCore::isExistInfosMySQL() function] Remove some break; PHP statement
+		It broke the $where foreach
+
+Version 1.6.3 - Released on 10 January 2016
+	[Update] [OliCore::loadContent() function] Error File not found Message updated
+	[Add] [OliCore::loadLocalStyle() function] Added Minimize parameter: Show the code (minimized) directly on the page
+	[Add] [OliCore::loadCdnStyle() function] Added Minimize parameter: Show the code (minimized) directly on the page
+	[Add] [OliCore::loadLocalScript() function] Added Minimize parameter: Show the code (minimized) directly on the page
+	[Add] [OliCore::loadCdnScript() function] Added Minimize parameter: Show the code (minimized) directly on the page
+	[Add] [OliCore::setDefaultContentType() function] Added new function: Config the default Content Type (default: 'HTML')
+	[Add] [OliCore::isProtectedPostVarsCookie() function] Added new function: Get Post Vars Cookie Protection Status
+	[Add] [OliCore::getRawPostVars() function] Added new function: Get Raw Post Vars (serialized array)
+	[Update] [OliCore::protectPostVarsCookie() function] Reset Cookie expire time to CurrentTime+1hour to keep it alive
+	[Add] [OliCore::$postVarsCookieExpireDelay variable] Added new variable: Contain the Post Vars Cookie expire delay (default: 3600)
+	[Add] [OliCore::setPostVarsCookieExpireDelay() function] Added new function: Config the Post Vars Cookie expire delay (default: 3600)
+	[Update] [OliCore::setPostVarsCookie() function] Set Cookie expire time to CurrentTime+delay where delay is OliCore::$postVarsCookieExpireDelay variable
+	[Update] [OliCore::protectPostVarsCookie() function] Set Cookie expire time to CurrentTime+delay where delay is OliCore::$postVarsCookieExpireDelay variable
+	[Update] [OliCore::$postVarsCookieDomain variable] Rename old OliCore::$postVarsCookie_domain variable to OliCore::$postVarsCookieDomain
+	[Update] [OliCore::$postVarsCookieSecure variable] Rename old OliCore::$postVarsCookie_secure variable to OliCore::$postVarsCookieSecure
+	[Update] [OliCore::$postVarsCookieHttpOnly variable] Rename old OliCore::$postVarsCookie_httpOnly variable to OliCore::$postVarsCookieHttpOnly
+	[Update] [OliCore::$authKeyCookieDomain variable] Rename old OliCore::$authKeyCookie_domain variable to OliCore::$authKeyCookieDomain
+	[Update] [OliCore::$authKeyCookieSecure variable] Rename old OliCore::$authKeyCookie_secure variable to OliCore::$authKeyCookieSecure
+	[Update] [OliCore::$authKeyCookieHttpOnly variable] Rename old OliCore::$authKeyCookie_httpOnly variable to OliCore::$authKeyCookieHttpOnly
+	[Update] [OliCore::deletePostVarsCookie() function] Set Post Vars Cookie Value to null when deleting
+	[Update] [OliCore::deleteAuthKeyCookie() function] Set Auth Key Cookie Value to null when deleting
+	[Update] [OliCore::$postVarsCookieExpireDelay variable] Default Value set to 1
+	[Deprecated] [OliCore::deletePostVarsCookie() function] Deprecated function
+	[Update] [OliCore::__destruct() function] Don't execute deletePostVarsCookie() function anymore
+	[Deprecated] [OliCore::setPostVarsCookieExpireDelay() function] Deprecated function: default delay value (1) highly recommended
+	[Bugfix] [OliCore::getOption() function] Multiple Settings Tables: Returned the value of first settings table, now return the first non-empty value
+	[Update] [OliCore::minimizeStyleSize() function] New filter: remove the last ";" character before "}"
+	[Update] [OliCore::registerAccount() function] Now save register date in Main Accounts Table
+	[Add] [script_basepath.oli] New file which contains path to Oli Script and Addon Scripts (default: '')
+	[Add] [load.php::SCRIPTBASEPATH constant] Add new SCRIPTBASEPATH constant which contains path to Oli Script and Addon Scripts (default: ABSPATH)
+	[Update] [load.php::SCRIPTBASEPATH constant] Define SCRIPTBASEPATH value:
+		If not empty, SCRIPTBASEPATH takes "script_basepath.oli" file content as value
+		Else, SCRIPTBASEPATH takes ABSPATH as value
+	[Update] [load.php::INCLUDEPATH constant] INCLUDEPATH takes now SCRIPTBASEPATH . 'includes/' as value
+	[Update] [load.php::ADDONSPATH constant] ADDONSPATH takes now SCRIPTBASEPATH . 'includes/' as value
+	[Update] [OliCore::translateUserRight() function] Change output select method:
+		If (where) var 'user_right' is non-empty, return 'id' var
+		Else If (where) var 'id', return 'user_right' var
+	[Add] [OliCore::isEmptyPostVars() function] Added new function: Test if OliCore::getRawPostVars() is empty
+	[Update] [OliCore::updateAccountInfos() function] Remove OliCore::$accountsManagementStatus value check
+	[Update] [OliCore::deleteAccountInfos() function] Remove OliCore::$accountsManagementStatus value check
+	[Update] [OliCore::deleteFullAccount() function] Remove OliCore::$accountsManagementStatus value check
+	[Update] [OliCore::registerAccount() function] Update Activation email Message
+	[Update] [OliCore::registerAccount() function] Check for email result:
+		If error when sending, OliCore::deleteFullAccount() and return false
+	[Add] [login.php] Add management for accounts activation (email verification)
+	[Update] [OliCore::getAccountsManagementStatus() function] Rename old isAccountsManagementEnabled() function to getAccountsManagementStatus()
+	[Add] [OliCore::registerAccount() function] Add 'future_user_right' match for activation requests with 'USER' as value
+	[Add] [OliCore::$requestsExpireDelay variable] Add new $requestsExpireDelay variable which contains the requests expire delay in seconds (default: 172800)
+	[Add] [OliCore::setRequestsExpireDelay() function] Add new setRequestsExpireDelay() function which define $requestsExpireDelay (default: 172800)
+	[Add] [OliCore::registerAccount() function] Add 'expire_date' match for activation requests with time() + $requestsExpireDelay as value
+	[Add] [OliCore::registerAccount() function] If Account Exist AND has default user right AND has a expired pending request, delete the Account Table and allow registering new user
+	[Update] [OliCore::registerAccount() function] Use utf8_decode() php function on Activation email Message before sending
+
+Version 1.6.2 - Released on 9 December 2015
+	No changelog availaible.
+
+Version 1.6.0 - Released on 6 December 2015
+	No changelog availaible.
+
+
+	*** ---------------- ***
+	*** Version BETA 1.5 ***
+	*** ---------------- ***
+
+Version 1.5.5 - Released on 20 November 2015
+	No changelog availaible.
+
+Version 1.5.3 - Released on 26 August 2015
+	No changelog availaible.
+
+Version 1.5.2 - Released on 25 August 2015
+	No changelog availaible.
+
+Version 1.5.1 - Released on 21 August 2015
+	No changelog availaible.
+
+Version 1.5.0 - Released on 17 August 2015
+	No changelog availaible.

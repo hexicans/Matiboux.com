@@ -1,0 +1,15 @@
+/*\
+|*|
+|*|  Matiboux Manager Stylesheet
+|*|  Copyright Matiboux 2015
+|*|
+|*|  Developper: Matiboux (http://matiboux.com/)
+|*|  Website: http://manager.matiboux.com/
+|*|
+\*/
+
+/** Textarea Form Control */
+.main .form textarea.form-control {
+    max-height: 94px;
+    resize: none;
+}

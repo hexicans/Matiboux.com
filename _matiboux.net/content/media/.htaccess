@@ -1,0 +1,5 @@
+deny from all
+
+<FilesMatch ".(txt|bmp|jpg|jpeg|png|gif|htm|html)">
+	allow from all
+</FilesMatch>

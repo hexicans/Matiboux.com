@@ -1,0 +1,74 @@
+/* ------------------ */
+/* CSS Style for Messages
+/* Author: Matiboux
+/* Website: http://matiboux.com/
+/* ------------------ */
+
+/* ------------------ */
+/* This Stylesheet is design to work with FontAwesome.
+/* FontAwesome: http://fortawesome.github.io/Font-Awesome/
+/* The file is also host at http://data.matiboux.com/common-files/css/font-awesome.min.css
+/* ------------------ */
+
+.messages .message {
+	margin: 10px 0;
+	min-height: 60px;
+	overflow: hidden;
+	border: 1px solid #ddd;
+}
+.messages .message.message-info {
+    background: #bde5f8;
+}
+.messages .message.message-info,
+.messages .message.message-info h2,
+.messages .message.message-info h2 small,
+.messages .message.message-info p {
+    color: #00529b;
+}
+.messages .message.message-success {
+    background: #dff2bf;
+}
+.messages .message.message-success,
+.messages .message.message-success h2,
+.messages .message.message-success h2 small,
+.messages .message.message-success p {
+    color: #4f8a10;
+}
+.messages .message.message-warning {
+    background: #feefb3;
+}
+.messages .message.message-warning,
+.messages .message.message-warning h2,
+.messages .message.message-warning h2 small,
+.messages .message.message-warning p {
+    color: #9f6000;
+}
+.messages .message.message-error {
+    background: #ffbaba;
+}
+.messages .message.message-error,
+.messages .message.message-error h2,
+.messages .message.message-error h2 small,
+.messages .message.message-error p {
+    color: #d8000c;
+}
+
+.messages .message > .message-icon {
+    position: absolute;
+    width: 60px;
+    padding: 8px 0;
+    font-size: 2em;
+    text-align: center;
+}
+.messages .message > .message-content {
+    margin: 15px 0 15px 60px;
+    word-wrap: break-word;
+}
+.messages .message > .message-content h2 {
+	margin: 5px 0;
+	font-size: 22px;
+}
+.messages .message > .message-content p {
+	margin: 5px 0;
+	font-size: 16px;
+}

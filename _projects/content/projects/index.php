@@ -1,0 +1,1 @@
+<?php header('Location: ' . $_Oli->getUrlParam(0) . 'status/'); ?>

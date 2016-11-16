@@ -1,0 +1,1 @@
+<?php include COMMONPATH . '404.php'; ?>
