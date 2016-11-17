@@ -2,7 +2,7 @@
 
 **Welcome.**  
 **My name is Mathieu "Matiboux" Guérin.**  
-You can see me as a young web developer.  
+You could see me as a young web developer.  
 But I'm also a web designer and a little artist who draws mostly furries, and wish he could make some music or simple melodies.
 
 In few words, I'm a random kid like anyone. I'm just curious.  
@@ -54,21 +54,28 @@ My main projects:
 
 - **Matiboux Social** - A hand-made privacy-friendly social network.
 
-My smaller projects:
+My management projects:
 
 - **Matiboux Projects** - List of my projects and informations.
 - **Matiboux personnal website** - About me and updates.
 - **Admin Panel** - Admin tools for management.
-- **Matiboux Accounts** - Account management, and log system ([official Oli login page](https://gist.github.com/matiboux/38f1057947c26b8ccf234da8b47e20b3)).
+- **Matiboux Accounts** - Account management, and log system ([official Oli login page](https://gist.github.com/matiboux/38f1057947c26b8ccf234da8b47e20b3))
 
+My smaller projects: 
 
+- **Matiboux Health** - Fitness stuff. Health care. IMC calculator, history, and more. 
+- **Matiboux CDN** - Content Cloud. CSS styles and more. 
+- **Mztiboux APIs** - APIs Platform. Keygen and more
+- **How** - Silly animated website, some with music.
 
 ### Other web projects I worked on
 
 - **Gaming Actu** - Blog and news on video games.
 - **StormRadio** - A web radio.
 - **Gaming Live TV** - Web TV for videos game streams.
+- **Natropics** - A image hebergement like ImgShot. Replaced with Natrox Cloud. 
 - **Natrox Cloud** - A user cloud service. *Goodbye Natrox I guess.*
+- **Natrox Games** - Games servers group. *They said it wasn't meant for me*
 
 ### And more personnal projects
 
