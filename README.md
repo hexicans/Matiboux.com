@@ -65,7 +65,7 @@ My smaller projects:
 
 - **Matiboux Health** - Fitness stuff. Health care. IMC calculator, history, and more. 
 - **Matiboux CDN** - Content Cloud. CSS styles and more. 
-- **Mztiboux APIs** - APIs Platform. Keygen and more
+- **Matiboux APIs** - APIs Platform. Keygen and more
 - **How** - Silly animated website, some with music.
 
 ### Other web projects I worked on
