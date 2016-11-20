@@ -84,3 +84,5 @@ My smaller projects:
 - **Processing Projects** - Silly Processing programs I made.
 - [**Artworks**](https://www.instagram.com/matiboux/) - MY DRAWINGS.
 - **Music** - No. Please, no.
+
+That's kinda all of my projects, if you want to see [my work timeline, there you go](https://docs.google.com/spreadsheets/d/1-l_yHfnvMfy3f-IDBz1458rClvve-mDzstMuoPb-4ww/edit?usp=sharing)!
