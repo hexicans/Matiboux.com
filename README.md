@@ -19,7 +19,7 @@ I started to make few projects on the web all by myself: with a computer, a basi
 - I tried to make musics on FL Studio. It really sucks. I don't take much time to learn how to properly use it tho..
 - And I wrote stories.. Most of them about my own feelings. Heh.
 
-And today, I decided to take a break from my projects which mean that my web projects are on standy. That's why I upload a backup here.
+And today, I decided to take a break from my projects which mean that my web projects are on standby. That's why I upload a backup here.
 
 So that's it about me.
 Enjoy my website backup here, or check the list of all my projects below.
@@ -30,7 +30,7 @@ All my personnal web projects are on this backup repository I think.
 *Oh, and hey. Please note that all my projects are on standby, don't forget.*
 
 **Most of my main projects are licensed.**  
-But all my other projects are not licensed: _please consider each of them as open source projects **licensed under the MIT License**_. This license allow you to do whatever you want, as long you mention my name and copyright.
+But all my other projects are not licensed: _please consider each of them as open source projects **licensed under the MIT License**_. This license allow you to do whatever you want, as long as you mention my name and copyright.
 
 My main projects:
 
